@@ -1,5 +1,19 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <p class="intro">Spotter is a responsive exercise app that learns as you work out.</p>
+
   </div>
 </template>
+
+<script>
+export default {
+  name: "about"
+};
+</script>
+
+<style scoped lang="scss">
+.intro {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+</style>
