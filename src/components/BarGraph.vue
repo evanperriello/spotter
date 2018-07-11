@@ -1,26 +1,35 @@
 <template>
-    <svg class="chart" v-bind:width="360" height="120" aria-labelledby="title desc" role="img">
-        <title id="title">View your progress in this exercise</title>
-        <g v-for="(set, iterator) in sets" v-bind:key="set.date" class="bar" v-on:hover="focusStats(set.weight)">
-            <rect 
-                class="weight-bar" 
-                width="10" 
-                v-bind:height="set.weight" 
-                v-bind:y="[120 - set.weight]" 
-                v-bind:x="[iterator*12]" 
-                fill="rebeccapurple" 
-                opacity=".5">
-            </rect>
-            <rect 
-                class="reps-bar" 
-                width="10" 
-                v-bind:height="[set.reps * 4]" 
-                v-bind:y="[120 - set.reps*4]" 
-                v-bind:x="[iterator*12]" 
-                fill="red" 
-                opacity=".5">
-            </rect>
-        </g>
+    <svg 
+      class="chart" 
+      :width="chartWidth" 
+      :height="chartHeight"
+      aria-labelledby="title desc" 
+      role="img">
+      <title id="title">View your progress in this exercise</title>
+      <g 
+        v-for="(set, iterator) in sets" 
+        :key="set.date" 
+        class="bar" 
+        v-on:hover="focusStats(set.weight)">
+          <rect 
+              class="weight-bar" 
+              :width="barWidth" 
+              :height="set.weight/divider  * chartHeight" 
+              :y="chartHeight - (set.weight/divider * chartHeight)" 
+              :x="iterator*(barWidth + spacer)" 
+              fill="rebeccapurple" 
+              opacity=".5">
+          </rect>
+          <rect 
+              class="reps-bar" 
+              :width="barWidth" 
+              :height="set.reps/divider * chartHeight" 
+              :y="chartHeight - (set.reps/divider  * chartHeight)" 
+              :x="iterator*(barWidth + spacer)" 
+              fill="red"
+              opacity=".5">
+          </rect>
+      </g>
     </svg>  
 </template>
 
@@ -28,20 +37,17 @@
 export default {
   name: "bar-graph",
   props: {
-    sets: Array
-  },
-  data() {
-    return {};
-  },
-  methods: {
-    focusStats(weight) {
-      console.log(weight);
-    }
+    sets: Array,
+    divider: Number,
+    chartWidth: Number,
+    chartHeight: Number,
+    spacer: Number
   },
   computed: {
-    chartHeight() {}
-  },
-  components: {}
+    barWidth() {
+      return this.chartWidth / this.sets.length - this.spacer;
+    }
+  }
 };
 </script>
 

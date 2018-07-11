@@ -1,15 +1,22 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div id="app" class="app">
+    <Nav></Nav>
     <router-view/>
   </div>
 </template>
+<script>
+import Nav from "@/shared/nav";
+export default {
+  components: {
+    Nav
+  }
+};
+</script>
 
 <style lang="scss">
 * {
   box-sizing: border-box;
+}
+.app {
 }
 </style>

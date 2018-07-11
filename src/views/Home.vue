@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <SearchInput v-model="searchTerm"/>
-    <Exercise v-for="exercise in filteredExercises" v-bind:exercise="exercise" v-bind:key="exercise.name"/>
+    <div class="exercise-list">
+      <Exercise v-for="exercise in filteredExercises" v-bind:exercise="exercise" v-bind:key="exercise.name"/>
+    </div>
   </div>
 </template>
 
@@ -39,3 +41,16 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.exercise-list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+</style>

@@ -43,7 +43,7 @@ export default {
           {
             date: "6",
             weekDay: 1,
-            weight: 110,
+            weight: 500,
             unit: "lb",
             reps: 8
           },
@@ -54,7 +54,21 @@ export default {
             unit: "lb",
             reps: 10
           },
-          { date: "8", weekDay: 1, weight: 90, unit: "lb", reps: 8 }
+          { date: "8", weekDay: 1, weight: 90, unit: "lb", reps: 8 },
+          {
+            date: "7",
+            weekDay: 1,
+            weight: 90,
+            unit: "lb",
+            reps: 10
+          },
+          {
+            date: "7",
+            weekDay: 1,
+            weight: 90,
+            unit: "lb",
+            reps: 10
+          }
         ]
       },
       {
@@ -64,30 +78,30 @@ export default {
           {
             date: "9",
             weekDay: 1,
-            weight: null,
+            weight: 0,
             unit: "mi",
             reps: 10
           },
           {
             date: "10",
             weekDay: 1,
-            weight: null,
+            weight: 0,
             unit: "mi",
             reps: 8
           },
           {
             date: "11",
             weekDay: 1,
-            weight: null,
+            weight: 0,
             unit: "mi",
             reps: 10
           },
           {
             date: "12",
             weekDay: 1,
-            weight: null,
+            weight: 0,
             unit: "mi",
-            reps: 8
+            reps: 7
           }
         ]
       },
