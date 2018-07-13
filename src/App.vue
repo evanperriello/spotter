@@ -1,7 +1,10 @@
 <template>
   <div id="app" class="app">
     <Nav></Nav>
-    <router-view/>
+    <div class="spacer">&nbsp;</div>
+    <main class="main"><router-view/></main>
+    <footer>blah blah blah</footer>
+    
   </div>
 </template>
 <script>
@@ -17,6 +20,22 @@ export default {
 * {
   box-sizing: border-box;
 }
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  color: rgb(56, 56, 56);
+  height: 100%;
+}
 .app {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+}
+.main {
+  position: relative;
+  left: 9rem;
+  padding-right: 9rem;
 }
 </style>

@@ -18,7 +18,7 @@
               :y="chartHeight - (set.weight/divider * chartHeight)" 
               :x="iterator*(barWidth + spacer)" 
               fill="rebeccapurple" 
-              opacity=".5">
+              opacity=".6">
           </rect>
           <rect 
               class="reps-bar" 
@@ -27,7 +27,7 @@
               :y="chartHeight - (set.reps/divider  * chartHeight)" 
               :x="iterator*(barWidth + spacer)" 
               fill="red"
-              opacity=".5">
+              opacity=".6">
           </rect>
       </g>
     </svg>  

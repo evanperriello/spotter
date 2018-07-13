@@ -1,10 +1,13 @@
 <template>
     <div class="exercise">
         <h2 class="exercise__title">{{name}}</h2>
-        <p v-if="maxWeight > 0" class="exercise__mweight">
-          Max weight: {{maxWeight}}
-        </p>
-        <p v-if="maxReps > 0" class="exercise__mreps">Max reps: {{maxReps}}</p>
+        <div class="exercise__stats"> 
+          <p v-if="maxWeight > 0" class="exercise__mweight">
+            Max weight: {{maxWeight}}
+          </p>
+          <p v-if="maxReps > 0" class="exercise__mreps">Max reps: {{maxReps}}
+          </p>
+        </div>
         
         <BarGraph 
           :sets="sets" 
