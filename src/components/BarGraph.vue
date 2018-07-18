@@ -11,7 +11,7 @@
         :key="set.date" 
         class="bar" 
         v-on:hover="focusStats(set.weight)">
-          <rect 
+          <rect v-if="viewBy == 'weight'"
               class="weight-bar" 
               :width="barWidth" 
               :height="set.weight/divider  * chartHeight" 
@@ -20,7 +20,7 @@
               fill="rebeccapurple" 
               opacity=".6">
           </rect>
-          <rect 
+          <rect v-if="viewBy == 'reps'"
               class="reps-bar" 
               :width="barWidth" 
               :height="set.reps/divider * chartHeight" 
@@ -41,7 +41,8 @@ export default {
     divider: Number,
     chartWidth: Number,
     chartHeight: Number,
-    spacer: Number
+    spacer: Number,
+    viewBy: String
   },
   computed: {
     barWidth() {
@@ -51,5 +52,5 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>

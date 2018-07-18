@@ -1,4 +1,5 @@
 <template>
+  <transition name="fade">
     <div class="exercise">
         <h2 class="exercise__title">{{name}}</h2>
         <div class="exercise__stats"> 
@@ -7,16 +8,32 @@
           </p>
           <p v-if="maxReps > 0" class="exercise__mreps">Max reps: {{maxReps}}
           </p>
+          <input 
+            type="radio" 
+            id="weightView" 
+            :value="true" 
+            v-model="viewByWeight">
+          <label for="weightView" >Weight</label>
+          <input 
+            type="radio" 
+            id="repView" 
+            :value="false" 
+            :checked="graphView === 'reps'" 
+            v-model="viewByWeight">
+          <label for="repView">Reps</label>
+
         </div>
         
         <BarGraph 
           :sets="sets" 
-          :divider="maxWeight > maxReps ? maxWeight: maxReps"
+          :divider="graphView == 'weight'? maxWeight:maxReps"
           :chartWidth="200"
           :chartHeight="100"
           :spacer="2"
+          :viewBy="graphView"
           />
     </div>
+  </transition>
 </template>
 
 <script>
@@ -33,7 +50,7 @@ export default {
     exercise: Object
   },
   data() {
-    return { ...this.exercise };
+    return { ...this.exercise, viewByWeight: true };
   },
   components: {
     BarGraph
@@ -44,6 +61,9 @@ export default {
     },
     maxReps() {
       return maxValueArrOfObj(this.sets, "reps");
+    },
+    graphView() {
+      return this.viewByWeight && this.maxWeight > 0 ? "weight" : "reps";
     }
   }
 };
@@ -56,5 +76,17 @@ export default {
   align-items: center;
   justify-content: space-between;
   margin: 1rem;
+  &__title {
+    font-weight: 300;
+  }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  overflow: hidden;
 }
 </style>

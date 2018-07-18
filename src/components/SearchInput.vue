@@ -24,5 +24,6 @@ export default {
   border: lightgray 0.1rem solid;
   padding: 0.5rem;
   font-size: 1rem;
+  width: 20rem;
 }
 </style>

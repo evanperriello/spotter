@@ -1,8 +1,8 @@
 <template>
     <div id="nav" class="nav">
-      <div class="nav__logo-container">Spotter</div>
-      <router-link class="nav__link" to="/">Home</router-link>
-      <router-link class="nav__link" to="/about">About</router-link>
+      <div class="nav__logo-container">spotter icon here</div>
+      <router-link class="nav__link" to="/">home</router-link>
+      <router-link class="nav__link" to="/about">about</router-link>
     </div>
 </template>
 
@@ -13,14 +13,14 @@ export default {};
 <style lang="scss" scoped>
 .nav {
   color: white;
-  height: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3rem;
-  background: rebeccapurple;
-  position: absolute;
-  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    rebeccapurple 10%,
+    rgb(10, 10, 10) 10%
+  );
   &__link {
     color: white;
     text-decoration: none;
@@ -32,8 +32,13 @@ export default {};
     display: flex;
   }
   &__link:hover {
-    color: rebeccapurple;
-    background: white;
+    background: rebeccapurple;
+  }
+  &__logo-container {
+    background-color: rebeccapurple;
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 </style>
