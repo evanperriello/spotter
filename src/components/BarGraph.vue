@@ -5,30 +5,36 @@
       :height="chartHeight"
       aria-labelledby="title desc" 
       role="img">
-      <title id="title">View your progress in this exercise</title>
+      
       <g 
         v-for="(set, iterator) in sets" 
         :key="set.date" 
         class="bar" 
-        v-on:hover="focusStats(set.weight)">
+        >
+        <transition name="popup" mode="out-in">
           <rect v-if="viewBy == 'weight'"
               class="weight-bar" 
-              :width="barWidth" 
-              :height="set.weight/divider  * chartHeight" 
+              :width="barWidth"
+              :height="set.weight/divider  * chartHeight + 10" 
               :y="chartHeight - (set.weight/divider * chartHeight)" 
               :x="iterator*(barWidth + spacer)" 
               fill="rebeccapurple" 
-              opacity=".6">
+              opacity=".6"
+              :key="name + iterator + 'weight'"
+              >
           </rect>
-          <rect v-if="viewBy == 'reps'"
+          <rect v-else
               class="reps-bar" 
               :width="barWidth" 
-              :height="set.reps/divider * chartHeight" 
+              :height="set.reps/divider * chartHeight + 10" 
               :y="chartHeight - (set.reps/divider  * chartHeight)" 
               :x="iterator*(barWidth + spacer)" 
               fill="red"
-              opacity=".6">
+              opacity=".6"
+              :key="name + iterator + 'reps'"
+              >
           </rect>
+        </transition>
       </g>
     </svg>  
 </template>
@@ -42,7 +48,8 @@ export default {
     chartWidth: Number,
     chartHeight: Number,
     spacer: Number,
-    viewBy: String
+    viewBy: String,
+    name: String
   },
   computed: {
     barWidth() {
@@ -53,4 +60,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.popup-enter-active,
+.popup-leave-active {
+  transition: y 0.4s cubic-bezier(0.35, 0.07, 0.53, 1.23);
+}
+.popup-enter,
+.popup-leave-to {
+  y: 100;
+}
 </style>

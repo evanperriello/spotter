@@ -19,11 +19,10 @@ export default {
 <style scoped lang="scss">
 .searchInput {
   border-radius: 0.5rem;
-  width: 50%;
-  box-shadow: none;
-  border: lightgray 0.1rem solid;
+  width: 20rem;
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.384);
+  border: none;
   padding: 0.5rem;
   font-size: 1rem;
-  width: 20rem;
 }
 </style>

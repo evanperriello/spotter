@@ -30,6 +30,7 @@ body {
   margin: 0;
   color: white;
   height: 100%;
+  font-family: "Open Sans", sans-serif;
 }
 .app {
   display: flex;

@@ -19,7 +19,8 @@ export default {};
   background-image: linear-gradient(
     to right,
     rebeccapurple 10%,
-    rgb(10, 10, 10) 10%
+    rgb(10, 10, 10) 10%,
+    rgb(60, 60, 60)
   );
   &__link {
     color: white;
@@ -35,7 +36,12 @@ export default {};
     background: rebeccapurple;
   }
   &__logo-container {
-    background-color: rebeccapurple;
+    background-image: linear-gradient(
+      to right,
+      rebeccapurple 10%,
+      rgb(10, 10, 10) 10%,
+      rgb(60, 60, 60)
+    );
     width: 100%;
     padding-top: 3rem;
     padding-bottom: 3rem;

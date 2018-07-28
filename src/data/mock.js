@@ -5,28 +5,19 @@ export default {
         name: "Bench Press",
         preferredMeasure: "distance",
         sets: [
-          {
-            date: "1",
-            weekDay: 1,
-            weight: 100,
-            unit: "lb",
-            reps: 10
-          },
-          {
-            date: "2",
-            weekDay: 1,
-            weight: 110,
-            unit: "lb",
-            reps: 8
-          },
-          {
-            date: "3",
-            weekDay: 1,
-            weight: 90,
-            unit: "lb",
-            reps: 10
-          },
-          { date: "4", weekDay: 1, weight: 90, unit: "lb", reps: 8 }
+          { date: "4", weekDay: 1, weight: 90, unit: "lb", reps: 8 },
+          { date: "4", weekDay: 1, weight: 95, unit: "lb", reps: 8 },
+          { date: "4", weekDay: 1, weight: 97.5, unit: "lb", reps: 8 },
+          { date: "4", weekDay: 1, weight: 100, unit: "lb", reps: 8 },
+          { date: "4", weekDay: 1, weight: 97.5, unit: "lb", reps: 8 },
+          { date: "4", weekDay: 1, weight: 102.5, unit: "lb", reps: 8 },
+          { date: "4", weekDay: 1, weight: 100, unit: "lb", reps: 8 },
+          { date: "4", weekDay: 1, weight: 95, unit: "lb", reps: 8 },
+          { date: "4", weekDay: 1, weight: 97.5, unit: "lb", reps: 8 },
+          { date: "4", weekDay: 1, weight: 110, unit: "lb", reps: 8 },
+          { date: "4", weekDay: 1, weight: 105, unit: "lb", reps: 8 },
+          { date: "4", weekDay: 1, weight: 107.5, unit: "lb", reps: 8 },
+          { date: "4", weekDay: 1, weight: 105, unit: "lb", reps: 8 }
         ]
       },
       {
