@@ -8,7 +8,7 @@
       
       <g 
         v-for="(set, iterator) in sets" 
-        :key="set.date" 
+        :key="set.date + iterator" 
         class="bar" 
         >
         <transition name="popup" mode="out-in">
