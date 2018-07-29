@@ -16,17 +16,8 @@
             @click="changeViewBy(false)"
           >
             Reps
-          </button>
-          <div class="exercise__weight" v-if="viewByWeight">
-            <p><span class="exercise__stats-label">Avg:</span> {{avgWeight}}</p>
-            <p> <span class="exercise__stats-label">Max:</span> {{maxWeight}}</p>
-          </div>
-          <div class="exercise__reps" v-else>
-            <p><span class="exercise__stats-label">Avg:</span> {{avgReps}}</p>
-            <p><span class="exercise__stats-label">Max:</span> {{maxReps}}</p>
-          </div>
-          
-
+          </button>         
+          <Stats :avgWeight = "avgWeight" :avgReps = "avgReps" :maxWeight="maxWeight" :maxReps="maxReps" :viewByWeight="viewByWeight"/>
         </div>
         
         <BarGraph 
@@ -44,6 +35,7 @@
 
 <script>
 import BarGraph from "@/components/BarGraph.vue";
+import Stats from "@/components/Stats.vue";
 function maxValueArrOfObj(arr, property) {
   return arr.reduce(
     (accum, curr) => (accum > curr[property] ? accum : curr[property]),
@@ -68,7 +60,8 @@ export default {
     return { ...this.exercise, viewByWeight: true };
   },
   components: {
-    BarGraph
+    BarGraph,
+    Stats
   },
   computed: {
     avgWeight() {
@@ -109,13 +102,6 @@ export default {
   margin: 1rem;
   &__title {
     font-weight: 400;
-  }
-  &__stats {
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  &__stats-label {
-    font-weight: 600;
   }
 }
 .fade-enter-active,
